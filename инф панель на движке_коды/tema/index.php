@@ -1,0 +1,46 @@
+<meta http-equiv="Refresh" content="3600" />
+<?php get_header (); ?>
+
+<div id="content">
+
+<?php header(); ?>
+
+
+<marquee direction="up" height=100% scrollamount="2" >
+
+<?php $posts = get_posts ("category=2&orderby=date&numberposts=30"); ?> 
+<?php if ($posts) : ?>
+<?php foreach ($posts as $post) : setup_postdata ($post); ?>
+<div class="date"><h2><?php the_time ('F dS, Y') ?></h2></div> 
+<div class=«title»><h3> <?php the_title (); ?> </h3> </div>
+
+  <div class="block">
+     <div class="name"> 
+
+<br>
+        <h4>  <?php the_content($post); ?> </h4>
+  
+     </div>
+  </div>
+ <br>
+<br>
+<?php 
+  endforeach;
+  wp_reset_postdata();
+?>
+<?php endif; ?>
+</marquee>
+
+</div>
+
+
+
+
+
+<?php get_sidebar (); ?>
+
+<?php get_footer(); ?>
+
+
+
+

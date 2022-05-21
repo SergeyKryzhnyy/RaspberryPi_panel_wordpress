@@ -1,0 +1,24 @@
+<marquee direction="right" width=100% scrollamount="4">
+<div id="footer">
+
+<h5>
+<?php $posts = get_posts ("category=5&orderby=date&numberposts=1"); ?> 
+<?php if ($posts) : ?>
+<?php foreach ($posts as $post) : setup_postdata ($post); ?>
+ 
+  <div class="block">
+     <div class="name"> 
+          <a <?php the_permalink() ?>" rel="bookmark"><?php the_content(); ?>
+   
+ 
+<?php 
+  endforeach;
+  wp_reset_postdata();
+?>
+<?php endif; ?>
+
+</h5>
+
+</marquee>
+
+
